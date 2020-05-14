@@ -1,0 +1,7 @@
+const codeWordbank = ["react", "vue", "syntax", "javascript", "typescript", "css", "SASS", "promises", "callback", "design", "front-end", "function", "conditionals", "back-end", "src", "jquery", "api", "json", "juno", "bootcamp", "projects", "vs-code", "wordpress", "website", "apps", "agile", "gong", "1", "north-pole", "south-pole", "scope", "curry", "tags", "cohort", "25", "konami", "portfolio", "salad-club", "show and tell", "deadlines", "laptop", "squirtle-squad", "marley", "instructor", "career", "console", "libraries", "frameworks", "memes", "hacker", "debug", "float", "flex", "forms", "grids", "github", "objects", "arrays", "boolean", "variables", "props", "bubbling", "events", "map", "filter", "snippets", "atom", "classroom", "tech-test", "interview", "undefined", "null", "DOM", "Beagel", "Bagel", "RegEx", "responsive", "accessbility", "navigation", "hamburger", "layout", "global", "block", "onClick", "components", "class", "firebase", "experience", "memory", "npm", "node", "tabs", "spaces", "footer", "header", "html", "xml", "colour", "modular", "fizzbuzz", "zoom", "toronto", "queen st", "hello world", "const", "let", "var", "absolute", "sticky", "relative", "transform", "margin", "padding", "mentors", "fishbowl", "pokemon API", "dreamhost", "props", "pair-programming", "mob-programming", "skills", "eggs", "es6", "arrow", "fundamentals", "logic", "circle of chairs", "pajamas", "salad", "calzone", "soup", "sandwich", "animal-crossing", "coffee", "bubble-tea", "sushi", "bar", "this", "data", "php", "mindblown", "secure", "sublime",]
+
+
+
+
+
+
