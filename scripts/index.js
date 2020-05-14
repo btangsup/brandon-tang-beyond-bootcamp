@@ -14,13 +14,16 @@
 */
 // team color variables
 
-let NUMBER_OF_WORDS = 25;
+const codeWordbank = ["react", "vue", "syntax", "javascript", "typescript", "css", "SASS", "promises", "callback", "design", "front-end", "function", "conditionals", "back-end", "src", "jquery", "api", "json", "juno", "bootcamp", "projects", "vs-code", "wordpress", "website", "apps", "agile", "gong", "1", "north-pole", "south-pole", "scope", "curry", "tags", "cohort", "25", "konami", "portfolio", "salad-club", "show and tell", "deadlines", "laptop", "squirtle-squad", "marley", "instructor", "career", "console", "libraries", "frameworks", "memes", "hacker", "debug", "float", "flex", "forms", "grids", "github", "objects", "arrays", "boolean", "variables", "props", "bubbling", "events", "map", "filter", "snippets", "atom", "classroom", "tech-test", "interview", "undefined", "null", "DOM", "Beagel", "Bagel", "RegEx", "responsive", "accessbility", "navigation", "hamburger", "layout", "global", "block", "onClick", "components", "class", "firebase", "experience", "memory", "npm", "node", "tabs", "spaces", "footer", "header", "html", "xml", "colour", "modular", "fizzbuzz", "zoom", "toronto", "queen st", "hello world", "const", "let", "var", "absolute", "sticky", "relative", "transform", "margin", "padding", "mentors", "fishbowl", "pokemon API", "dreamhost", "props", "pair-programming", "mob-programming", "skills", "eggs", "es6", "arrow", "fundamentals", "logic", "circle of chairs", "pajamas", "salad", "calzone", "soup", "sandwich", "animal-crossing", "coffee", "bubble-tea", "sushi", "bar", "this", "data", "php", "mindblown", "secure", "sublime", "plugins", "dog", "border", "gradients", "" ];
+
+
 
 const RED_CARDS = "#ff0000";
 const BLUE_CARDS = "#0000ff";
 const NEUTRAL_CARDS = "#222ccc";
 const BLACK_CARD = "#000";
 let game_over = false;
+const codenamesGrid = document.querySelector('.codenames-grid');
 
 // HANDLERS //
 const playerBoard = document.querySelector('#player');
@@ -32,16 +35,32 @@ const infoModalInner = document.querySelector('.info-modal-inner');
 const infoModalOuter = document.querySelector('.info-modal-outer');
 const info = document.querySelector(".info");
 
+// randomly select 25 words and store into an array
+
+const shuffledWords = [...codeWordbank].sort(() => 0.5 - Math.random());
+let CODENAME_WORDS = shuffledWords.slice(0, 25);
+console.log(CODENAME_WORDS);
+
+// create word card function to display randomly selected words
+
+CODENAME_WORDS.forEach(function (randomword) {
+    const word = document.createElement('div');
+    word.classList.add('card');
+    word.innerHTML = randomword;
+    codenamesGrid.appendChild(word);
+})
+
+
 
 function showInfo () {
     // show info from inner info modal
     infoModalOuter.classList.add('open');
 }
 
-function closeInfo() {
-    const exitBtn = document.querySelector(".exit-button");
+document.querySelector('.exit-button').addEventListener('click', function(e){
     infoModalOuter.classList.remove("open");
-}
+})
+
 
 infoModalOuter.addEventListener('click', function(event){
     const clickedOutside = !event.target.closest('.info-modal-inner');
@@ -54,9 +73,14 @@ infoModalOuter.addEventListener('click', function(event){
 window.addEventListener('keydown', (e) => {
     console.log(e);
     if(e === 'Escape') {
-        closeInfo();
     }
 })
 
 info.addEventListener('click', showInfo);
+
+// CODE NAMES START //
+
+function launchGame () {
+
+}
 
