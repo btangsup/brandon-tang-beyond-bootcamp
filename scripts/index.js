@@ -1,7 +1,7 @@
 /* PSEUDO CODE
 
-1. grab the word data base and store in a empty array that will hold 25 words
-2. create a function that will randomize and select 25 of the words from the data base
+// 1. grab the word data base and store in a empty array that will hold 25 words
+// 2. create a function that will randomize and select 25 of the words from the data base
 3. create a function that will randomize the coloured objectives.
     Example: 9 words will be blue/red (let)
             8 cards will be blue/red (let)
@@ -44,6 +44,7 @@ const BLUE_CARDS = "#0000ff";
 const NEUTRAL_CARDS = "#222ccc";
 const BLACK_CARD = "#000";
 let codemasterMode = false;
+let playerMode = true;
 const codenamesGrid = document.querySelector('.codenames-grid');
 
 // HANDLERS //
@@ -59,7 +60,7 @@ const info = document.querySelector(".info");
 // randomly select 25 words and store into an array
 
 const shuffledWords = [...codeWordbank].sort(() => 0.5 - Math.random());
-let CODENAME_WORDS = shuffledWords.slice(0, 25);
+const CODENAME_WORDS = shuffledWords.slice(0, 25);
 console.log(CODENAME_WORDS);
 
 // create word card function to display randomly selected words
@@ -76,24 +77,25 @@ CODENAME_WORDS.forEach(function (randomword) {
 
     word.addEventListener('click', function (e) {
         console.log(e.target.innerHTML ,' | this is for team ___');
+        // create a boolean to validate if the word matches the respective team objective
     })
 })
 
 // create a switch statement to help deligate points
 
-switch (color) {
-    case "red":
-        redScore++;
-        break;
-    case "blue":
-        blueScore++;
-        break;
-    case "black":
-        console.log('Other team wins!');
-        break;
-    case "neutral":
-        // turn over the possession and have other team choose
-}
+// switch (color) {
+//     case "red":
+//         redScore++;
+//         break;
+//     case "blue":
+//         blueScore++;
+//         break;
+//     case "black":
+//         console.log('Other team wins!');
+//         break;
+//     case "neutral":
+//         // turn over the possession and have other team choose
+// }
 
 // function updateScore(blue,red) {
 //     const redScores = document.querySelector('#red-score');
@@ -109,6 +111,16 @@ switch (color) {
 //     scores.appendChild(redScore)
 
 // }
+
+// CODE MASTER MODE (SHOW THE BOARD THE COLOURS)
+
+
+function toggleBoard () {
+    codemasterMode = true;
+    console.log('clicked', `is now ${codemasterMode}`)
+}
+
+codemasterBoard.addEventListener("click", toggleBoard);
 
 
 
